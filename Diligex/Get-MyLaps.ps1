@@ -71,8 +71,6 @@ $FetchButton.Add_Click({
             $PwdB64 = $Response.credentials[0].passwordBase64
             $DecodedPwd = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($PwdB64))
             $ResultBox.Text = "`r`n$DecodedPwd"
-            [System.Windows.Forms.Clipboard]::SetText($DecodedPwd)
-            [System.Windows.Forms.MessageBox]::Show("Password found and copied to clipboard!", "Success")
         } else {
             $ResultBox.Text = "No LAPS password found for this machine."
         }
